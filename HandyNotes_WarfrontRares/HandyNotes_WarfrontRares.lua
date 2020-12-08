@@ -1,5 +1,5 @@
 -- For the gnomes!!!
-local VERSION = "0.5.3";
+local VERSION = "0.6.0";
 
 local _G = getfenv(0)
 -- Libraries
@@ -1046,7 +1046,7 @@ function Arathi:ShowNode( mapFile, node )
 	if ( MYFACTION ~= nil and node["faction"] ~= nil and node["faction"] ~= MYFACTION ) then return false end
 	for i,q in pairs(node["questId"]) do
 		-- print( node["questId"][i] );
-		if ( IsQuestFlaggedCompleted( node["questId"][i] ) ) then return false end
+		if ( C_QuestLog.IsQuestFlaggedCompleted( node["questId"][i] ) ) then return false end
 	end
     return true
 end
